@@ -5,7 +5,7 @@ window.onload = function() {
     document.querySelector("#buttonLogin").onclick = function() {
         var params = 'login=' + inp_login.value + '&' + 'password=' + inp_password.value;
         ajaxPost(params,"handlers/handlerAuthorization.php", function(data) {
-            //console.log(data);
+            //alert(data);
         });
     }
 
@@ -34,6 +34,6 @@ window.onload = function() {
         }
 
         request.open("POST", url);
-        request.send(params + "&login1=555");
+        request.send(params);
     }
 }

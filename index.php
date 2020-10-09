@@ -1,21 +1,3 @@
-<?php
-    ini_set('session.gc_maxlifetime', 3600);
-    session_start();
-    $connect = new PDO('mysql:host=localhost; dbname=authorization_db', 'root', '');
-    $users = $connect->query("SELECT * FROM Users");
-    setcookie('err', 0, time() + 3600/55);
-    if($_POST['login']) {
-        foreach($users as $user) {
-            if($_POST['login'] == $user['login']) {
-                if($_POST['password'] == $user['password']) {
-                    $_SESSION['login'] = $_POST['login'];
-                    header('Location: mainPage.php');
-                } 
-            } 
-        }
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,9 +8,6 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
-    <?
-        echo $_POST['password'];
-    ?>
     <script src="js/AJAX.js"></script>
     <div class="wrapper">
         <div class="container h-100 main">
@@ -57,22 +36,12 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <div class="error">
-                        <?
-                            if($_COOKIE['err'] > 0){
-                                echo "Ошибка с логином или паролем";
-                            }
-                        ?>
-                        </div>
-                    </div> 
                     <div class="form-group ">
-                        <button class="btn btn-primary btn-lg btn-block login-button">Войти</button>
+                        <button id="buttonLogin" class="btn btn-primary btn-lg btn-block login-button">Войти</button>
                     </div>
                 </form>
                 <div class="form-group ">
-                    <button type="button" id="buttonReg" class="btn btn-primary btn-lg btn-block login-button">Зарегистрироваться</button>
+                    <button id="buttonReg" class="btn btn-primary btn-lg btn-block login-button">Зарегистрироваться</button>
                 </div>
             </div>
         </div>
