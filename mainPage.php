@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-    <header></header>
+    <header>Интернет-магазин</header>
     <section class="content"></section>
     <footer></footer>
 </body>
