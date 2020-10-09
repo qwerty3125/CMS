@@ -1,7 +1,10 @@
 window.onload = function() {
-    var pararms = []; 
+    var inp_login = document.querySelector('input[name=username]');
+    var inp_password = document.querySelector('input[name=password]');
+
     document.querySelector("#buttonLogin").onclick = function() {
-        ajaxGet("handlers/handlerAuthorization.php", function(data) {
+        var params = 'login' + inp_login.value + 'password' + inp_password.value;
+        ajaxPost(params,"handlers/handlerAuthorization.php", function(data) {
             console.log(data);
         });
     }
