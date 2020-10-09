@@ -1,7 +1,3 @@
-<?
-    
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +12,7 @@
     <div class="wrapper">
         <div class="container h-100 main">
             <div class="row main-form">
-                <form class="" method="post" action="#">
+                <form method="POST" action="handlers/handlerAuthorization.php">
                     <div class="form-group">
                         <div class="title">Authorization</div>
                     </div>    

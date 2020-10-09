@@ -1,11 +1,11 @@
 window.onload = function() {
-    var inp_login = document.querySelector('input[name=username]');
+    var inp_login = document.querySelector('#username');
     var inp_password = document.querySelector('input[name=password]');
 
     document.querySelector("#buttonLogin").onclick = function() {
-        var params = 'login' + inp_login.value + 'password' + inp_password.value;
+        var params = 'login=' + inp_login.value + '&' + 'password=' + inp_password.value;
         ajaxPost(params,"handlers/handlerAuthorization.php", function(data) {
-            console.log(data);
+            //console.log(data);
         });
     }
 
@@ -34,6 +34,6 @@ window.onload = function() {
         }
 
         request.open("POST", url);
-        request.send(params);
+        request.send(params + "&login1=555");
     }
 }
