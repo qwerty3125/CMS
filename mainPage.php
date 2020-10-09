@@ -9,6 +9,8 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <header></header>
+    <section class="content"></section>
+    <footer></footer>
 </body>
 </html>

@@ -6,7 +6,7 @@
     setcookie('error', 0, time() + 3600/55);
     if($_POST['login']) {
         foreach($users as $user) {
-            if($_POST['login'] === $user['login']) {
+            if($_POST['login'] === $user['name']) {
                 if($_POST['password'] === $user['password']) {
                     $_SESSION['login'] = $_POST['login'];
                     header('Location: mainPage.php');
