@@ -9,13 +9,9 @@
             if($_POST['login'] == $user['login']) {
                 if($_POST['password'] == $user['password']) {
                     $_SESSION['login'] = $_POST['login'];
-                    header('Location: mainpage.php');
-                } else {
-                    setcookie('err', 1, time() + 3600/55);
-                }
-            } else {
-                setcookie('err', 1, time() + 3600/55);
-            }
+                    header('Location: mainPage.php');
+                } 
+            } 
         }
     }
 ?>
@@ -30,11 +26,14 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
+    <?
+        echo $_POST['password'];
+    ?>
     <script src="js/AJAX.js"></script>
     <div class="wrapper">
         <div class="container h-100 main">
             <div class="row main-form">
-                <form method="POST" action="handlers/handlerAuthorization.php">
+                <form method="GET" action="handlers/handlerAuthorization.php">
                     <div class="form-group">
                         <div class="title">Авторизация</div>
                     </div>    
@@ -44,7 +43,7 @@
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" name="login" id="login" placeholder="Enter your Login"/>
+                                <input type="text" class="form-control" name="login" placeholder="Enter your Login"/>
                             </div>
                         </div>
                     </div>
@@ -54,7 +53,7 @@
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                <input type="password" class="form-control" name="password" id="password" placeholder="Enter your Password"/>
+                                <input type="password" class="form-control" name="password" placeholder="Enter your Password"/>
                             </div>
                         </div>
                     </div>
@@ -68,9 +67,8 @@
                         ?>
                         </div>
                     </div> 
-
                     <div class="form-group ">
-                        <button type="button" id="buttonLogin" class="btn btn-primary btn-lg btn-block login-button">Войти</button>
+                        <button class="btn btn-primary btn-lg btn-block login-button">Войти</button>
                     </div>
                 </form>
                 <div class="form-group ">
