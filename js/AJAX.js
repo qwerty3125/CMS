@@ -1,5 +1,5 @@
 window.onload = function() {
-    var inp_login = document.querySelector('#username');
+    var inp_login = document.querySelector('input[name=login]');
     var inp_password = document.querySelector('input[name=password]');
 
     document.querySelector("#buttonLogin").onclick = function() {
