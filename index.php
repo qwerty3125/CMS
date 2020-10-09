@@ -14,21 +14,21 @@
             <div class="row main-form">
                 <form method="POST" action="handlers/handlerAuthorization.php">
                     <div class="form-group">
-                        <div class="title">Authorization</div>
+                        <div class="title">Авторизация</div>
                     </div>    
 
                     <div class="form-group">
-                        <label for="username" class="cols-sm-2 control-label">Login</label>
+                        <label for="username" class="cols-sm-2 control-label">Логин:</label>
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" name="username" id="username" placeholder="Enter your Username"/>
+                                <input type="text" class="form-control" name="login" id="login" placeholder="Enter your Username"/>
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="password" class="cols-sm-2 control-label">Password</label>
+                        <label for="password" class="cols-sm-2 control-label">Пароль:</label>
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
@@ -38,10 +38,12 @@
                     </div>
 
                     <div class="form-group ">
-                        <button type="button" id="buttonLogin" class="btn btn-primary btn-lg btn-block login-button">Enter</button>
+                        <button type="button" id="buttonLogin" class="btn btn-primary btn-lg btn-block login-button">Войти</button>
                     </div>
-                
                 </form>
+                <div class="form-group ">
+                    <button type="button" id="buttonReg" class="btn btn-primary btn-lg btn-block login-button">Зарегистрироваться</button>
+                </div>
             </div>
         </div>
     </div>
