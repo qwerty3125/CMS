@@ -10,6 +10,7 @@
                 if($_POST['password'] === $user['password']) {
                     $_SESSION['login'] = $_POST['login'];
                     header('Location: mainPage.php');
+                    die();
                 } else {
                     setcookie('error', 2, time() + 3600/55);
                 }
@@ -17,6 +18,9 @@
                 setcookie('error', 1, time() + 3600/55);
             }
         }
+    }
+    if($_POST) {
+        header('Location: index.php');
     }
 ?>
 

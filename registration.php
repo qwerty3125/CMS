@@ -1,3 +1,23 @@
+<?
+    $connect = new PDO('mysql:host=localhost; dbname=authorization_db', 'root', '');
+    if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['username']) && isset($_POST['password']) && isset($_POST['confirm'])){
+        if($_POST['password'] === $_POST['confirm']) {
+            $name = $_POST['name'];
+            $email = $_POST['email'];
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+            $query = $connect->prepare("INSERT INTO Users SET `name` = :name, `email` =:email, `username` = :username, `password` = :password");
+            $query->execute(array('name' => $name, 'email' => $email, 'username' => $username, 'password' => $password));
+            header('Location: index.php');
+            die();
+        }
+    }
+    
+    
+    if($_POST) {
+        header('Location: registration.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,9 +87,8 @@
                 </div>
 
                 <div class="form-group ">
-                    <button id="button" class="btn btn-primary btn-lg btn-block login-button">Создать учетную запись</button>
+                    <button id="buttonLogin" class="btn btn-primary btn-lg btn-block login-button">Создать учетную запись</button>
                 </div>
-                
                 </form>
                 <div class="form-group ">
                     <a href="index.php" class="btn btn-primary btn-lg btn-block login-button">Авторизоваться</a>
